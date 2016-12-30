@@ -1,0 +1,31 @@
+<!-- Settings container START -->
+<div class="col-md-12 aBSettings">
+    <h3>Export Settings</h3>
+    <p ng-hide="projectID">
+      Please Open or create a project in order to Export anything.
+    </p>
+    <div class=""  ng-show="projectID">
+      <h4 class="text-center">Export source code::</h4>
+      <!-- Label END -->
+    <p class="text-center">
+      <button ng-show="projectID" type="button" ng-click="exportPHP('theme')" name="button" class="btn btn-primary btn-lg">Export Theme</button> -
+        <button ng-show="projectID" type="button" ng-click="exportPHP('plugin')" name="button" class="btn btn-primary btn-lg">Export Plugin</button>
+    </p>
+
+
+    <h2>How to use:</h2>
+            <ol>
+                <li>just include the exported file in your plugin or theme. Ex: <textarea class="abCode ng-binding">require_once('abExport.php');</textarea></li>
+            </ol>
+    <h2>Dependencies:</h2>
+    <p>
+      Styles and scripts: <b><a href="http://server.admin-builder.com/dependencies/ab-src.zip" target="_blank">Download here</a></b>
+    </p>
+    <h2>Video Tutorial:</h2>
+    <p class="text-center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/7nlllD2Ps5k" frameborder="0" allowfullscreen></iframe>
+</p>
+
+    <div id="phpExport1"></div>
+  </div>
+</div>

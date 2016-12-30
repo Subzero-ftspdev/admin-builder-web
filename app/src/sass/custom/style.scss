@@ -1,0 +1,415 @@
+body {
+    background: #76b852;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+    background: -moz-linear-gradient(right, #76b852, #8DC26F);
+    background: -o-linear-gradient(right, #76b852, #8DC26F);
+    background: linear-gradient(to left, #76b852, #8DC26F);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.aB {
+    .header {
+        padding: 10px;
+        margin: 20px 0 0;
+        @include ab-border-radius(10px);
+        border:1px solid $borderColor1;
+
+        button {
+            &.settingsButton {
+                float: none;
+            }
+        }
+
+        .mainTitle {
+            font-size: 24px;
+            color: rgb(25, 49, 64);
+        }
+
+        span {
+            &.version {
+                color: #FFF;
+            }
+        }
+        .mainLogo{
+          margin-top:-10px;
+        }
+    }
+
+    .container {
+        background: #FFF;
+        padding-bottom: 20px;
+    }
+
+    .mainContainer {
+        margin-top: 20px;
+
+        h1 {
+            margin-bottom: 60px;
+        }
+
+        .accountContainer {
+            max-width: 100%;
+        }
+    }
+
+    .mainBox {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+        input {
+            font-family: "Roboto", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+        }
+    }
+
+    .newProjectContainer {
+        max-width: 400px;
+        display: inline-block;
+        text-align: center;
+
+        .input-group {
+            float: none;
+            display: inline-block;
+            width: 100%;
+        }
+    }
+
+    .content {
+        .tabs {
+            ul {
+                &.menus {
+                    padding: 20px 0 0;
+                    margin: 0;
+
+                    li {
+                        margin: 0;
+                        padding: 0 0 2px;
+                        list-style-type: none;
+                    }
+                }
+            }
+        }
+
+        .metabox {
+            background: $contentColor1;
+            border: 1px solid $borderColor1;
+            margin:2px 0px;
+            .label {
+                display: inline-block;
+                color: #404040;
+                width: 100%;
+                text-align: center;
+            }
+
+            .expand,
+            .navigate {
+                display: inline-block;
+            }
+
+            .drag {
+                .btn.disabled {
+                    cursor: -webkit-grab;
+                }
+            }
+
+            .mBoxBody {
+                border-top: 1px solid $borderColor1;
+                padding:20px 0;
+
+                h2 {
+                    &.fieldsGTitle {
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            .mBoxSettContainer {
+                padding-top: 20px;
+            }
+            //general fields container
+            .input-group {
+                margin-bottom: 10px;
+            }
+        }
+
+        .aBLLabel {
+            //Admin Builder List Label Style
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 5px;
+        }
+
+        .addMBButton {
+            padding-top: 20px;
+        }
+
+        .field {
+            margin: 2px 0 0;
+
+            .fMainContainer {
+                display: inline-block;
+                background-color: #cbcbcb;
+                border: 1px solid #9f9f9f;
+                .fieldHeader{
+                  padding:10px 0;
+                  &:hover{
+                    cursor: pointer;
+                  }
+                }
+            }
+
+            .fieldBody {
+                border-top: 1px solid $borderColor2;
+                padding:20px 0;
+
+                .input-group {
+                    .form-control {
+                        &.flexibleHeight {
+                            height: auto;
+                        }
+                    }
+
+                    input {
+                        &[type="checkbox"] {
+                            width: auto;
+                            margin: 4px 10px;
+                            height: auto;
+                        }
+                    }
+                }
+                .navigate{
+                  margin-bottom: 20px;
+                }
+                .fieldOptions{
+                  h3{
+                    margin:0px;
+                    padding:0px;
+                  }
+                }
+            }
+
+            .aBLLabel {
+                color: #333;
+            }
+        }
+
+        textarea {
+            &.abCode {
+                margin-top: 20px;
+                width: 100%;
+                background: #3d3d3d;
+                color: #00ff12;
+                text-align: left;
+                font-weight: 200;
+                height: 26px;
+            }
+        }
+
+        .addField {
+            display: inline-block;
+            width: 100%;
+            overflow: visible;
+
+            select {
+                width: auto;
+                visibility: visible;
+                height: auto;
+                display: inline-block;
+            }
+        }
+
+        .aBSettings {
+            p {
+                padding: 10px 0;
+            }
+
+            #phpExport1,
+            #phpExport2 {
+                display: none;
+            }
+        }
+
+        .login-page {
+            .box {
+                box-shadow: 0 0 20px $blueMain;
+                border: 1px solid #bababa;
+                padding: 20px;
+                display: inline-block;
+                margin: 40px 20px 0 0;
+            }
+        }
+
+        .splash {
+            button {
+                padding: 40px;
+                margin: 20px;
+
+                span {
+                    margin: 10px;
+                }
+            }
+        }
+
+        .abNewProject {
+            .input-group {
+                width: 100%;
+
+                .input-group-addon {
+                    width: 200px;
+                }
+            }
+        }
+
+        button {
+            &.editSettings {
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 10;
+            }
+        }
+
+        .projectsClass {
+            margin: 10px 0;
+            border: 1px solid $borderColor1;
+            padding: 10px;
+            @include ab-border-radius(10px);
+            vertical-align: center;
+
+            &.active {
+                background: green;
+            }
+            .projectTitle{
+              display: inline-block;
+              margin-left: 10px;
+            }
+        }
+    }
+
+    .alerts {
+        text-align: center;
+        font-size: 18px;
+        background: rgba(0, 255, 41,0.5);
+        padding: 10px;
+        max-width: 400px;
+        display: inline-block;
+        margin: 20px 0;
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        z-index: 10;
+
+        &.alert-danger {
+            background: rgba(255, 0, 0, 0.8);
+            color: #FFF;
+            height: auto;
+        }
+
+        .close {
+            padding: 10px;
+            margin: 5px 20px 0;
+            border: 1px solid rgba(0, 255, 41,.6);
+            display: inline-block;
+            float: right;
+            margin-right: 20px;
+            background: rgba(89, 89, 89,0.2);
+            position: relative;
+            color: rgb(96, 96, 96);
+            opacity: 1;
+        }
+    }
+
+    input {
+        &.ng-invalid {
+            background: red;
+            color: #FFF;
+        }
+    }
+
+    .loadingOverlay {
+        z-index: 1000;
+        text-align: center;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        background: rgba(255, 255, 255,0.9);
+
+        .midC {
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            bottom: 50%;
+            right: 0;
+            font-weight: bold;
+            font-size: 22px;
+        }
+    }
+
+    .spView {
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .expandIcon{
+      padding:10px 0;
+      &:hover{
+        cursor:pointer;
+      }
+
+    }
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}

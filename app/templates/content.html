@@ -1,0 +1,40 @@
+<div class="col-md-12" ng-init="firstInitLoadProject()">
+    <button type="button" ng-click="saveSettings()" name="button" class="btn btn-primary btn-lg">Save</button>
+
+
+    <!--  EDITOR CONTENT START-->
+    <div class="row" ng-show="!sShow">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-sm-2 tabs">
+                    <ul class="menus">
+                        <li ng-repeat="menu in aBMain.menus">
+                            <button ng-click="setMenu($index,menu)" type="button" name="button" ng-class="{'btn-primary' : isMenu($index)}" class="btn - btn-default btn-block">
+                                {{menu.label}}
+                            </button>
+                        </li>
+                        <li class="text-center">
+                            Add:
+                        </li>
+                        <li class="text-center">
+                        <select class="" name="" ng-model="menuAdd" ng-change="addMainMenu()">
+                          <option ng-repeat="eMenu in extraMenus" value="{{eMenu.type}}">{{eMenu.label}}</option>
+                        </select>
+                      </li>
+                    </ul>
+                    <p>
+                      <br>
+                    </p>
+                </div>
+                <button class="btn btn-default editSettings" type="button" name="button" ng-click="editMainSettings(selMI)" ng-show="showEditSettings(selMI)" ng-class="{'btn-primary': menuEditSettShow}">Edit Settings</button>
+                <!-- maincontainer START-->
+                <ng-include class="col-sm-10 mainContainer" ng-show="aBMain.menus[selMI]" src="this.mainContainer">
+                </ng-include>
+                <!-- maincontainer END -->
+            </div>
+        </div>
+    </div>
+    <!--  Editor Content End-->
+
+
+</div>

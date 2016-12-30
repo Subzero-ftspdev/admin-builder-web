@@ -1,0 +1,33 @@
+<!-- before_widget_id START -->
+<div class="input-group">
+    <span class="input-group-addon" uib-tooltip="(string) (Required) The first URL segment after
+    core prefix. Should be unique to your package/plugin.">Namespace</span>
+    <input type="text" ng-model="mBox.namespace" name="name" class="form-control" />
+</div>
+<!-- before_widget_id END -->
+<!-- before_widget_id START -->
+<div class="input-group">
+    <span class="input-group-addon" uib-tooltip="The before_widget ID">Route Path</span>
+    <input type="text" ng-model="mBox.route_path" name="name" class="form-control" />
+</div>
+<!-- before_widget_id END -->
+
+<!-- before_widget_id START -->
+<div class="input-group">
+    <span class="input-group-addon" uib-tooltip="The before_widget ID">Callback Function</span>
+    <input type="text" ng-model="mBox.callbackFunction" name="name" class="form-control"></textarea>
+</div>
+<!-- before_widget_id END -->
+<!-- Priority START -->
+<div class="input-group">
+    <span class="input-group-addon" uib-tooltip="(string) (Required) The base URL for route you are adding">Method</span>
+    <select class="form-control" name="method" ng-model="mBox.rRMethod">
+        <option ng-repeat="method in rRMethods" value="{{method.value}}">{{method.label}}</option>
+    </select>
+</div>
+<!-- before_widget_id START -->
+<div class="input-group">
+    <span class="input-group-addon" uib-tooltip="(Optional) If the route already exists, should we override it? True overrides, false merges (with newer overriding if duplicate keys exist).">Override</span>
+    <input type="checkbox" ng-model="mBox.override" name="name" class="form-control">
+</div>
+<!-- Priority END -->

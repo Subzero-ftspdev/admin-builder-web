@@ -1,0 +1,108 @@
+<h2>{{aBMain.menus[selMI].label}}</h2>
+<p>
+    Configure the {{aBMain.menus[selMI].label}} contents. Add, edit, delete, sort content containers & fields here.
+</p>
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="row metabox " ng-repeat="mBox in aBMain.menus[selMI].children">
+            <div class="col-sm-12 ">
+                <div>
+                    <div class="mBoxHeader expandIcon" ng-click="isCollapsed = !isCollapsed">
+                        <div class="row">
+                            <div class="col-sm-12 ">
+                                <div class="row">
+                                    <div class="col-sm-11  text-center">
+                                        <div class="aBLLabel">
+                                            {{dinamicLabel(aBMain.menus[selMI],mBox.label)}}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1 text-right">
+                                        <div class="remove">
+                                            <button ng-click="removeMe(aBMain.menus[selMI].children,$index,aBMain.menus[selMI])" type="button" name="button" class="btn btn-default" ng-show="singleChild(aBMain.menus[selMI])">
+                                                <i class="glyphicon glyphicon-remove"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mBoxBody" uib-collapse="isCollapsed">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h2 ng-show="!mBoxSett" class="fieldsGTitle">Dynamic fields:</h2>
+                                <h2 ng-show="mBoxSett" class="fieldsGTitle">Edit Settings:</h2>
+                            </div>
+                            <div class="col-sm-5 text-center">
+                              <div class="navigate">
+                                Move:
+                                  <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'up')" class="btn btn-default" type="button" name="button" ng-show="singleChild(aBMain.menus[selMI])">
+                                      <i class="glyphicon glyphicon-arrow-up"></i>Up
+                                  </button>
+                                  <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'down')" class="btn btn-default" type="button" name="button" ng-show="singleChild(aBMain.menus[selMI])">
+                                      <i class="glyphicon glyphicon-arrow-down"></i>Down
+                                  </button>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 text-right">
+                              <button ng-show="mboxFields" type="button" name="button" ng-click="mBoxSett = !mBoxSett" ng-class="{'btn-default':!mBoxSett,'btn-primary':mBoxSett}" class="btn">Edit Settings</button>
+                            </div>
+                        </div>
+                        <!-- MetaBox Settings container START -->
+                        <div class="row mBoxSettContainer" ng-show="mBoxSett">
+                            <div class="col-sm-12">
+                                <!-- Label START -->
+                                <div class="input-group">
+                                    <span class="input-group-addon" uib-tooltip="The text label of the meta-box. What the header of the metabox text says.(Should change live as you type above.)">Label</span>
+                                    <input ng-model="mBox.label" type="text" class="form-control" placeholder="metabox Label" value="{{mBox.label}}" />
+                                </div>
+                                <!-- Label END -->
+
+                                <!-- Name START -->
+                                <div class="input-group">
+                                    <span class="input-group-addon" uib-tooltip="the unique name of the meta-box. Used behind the scenes.">Name</span>
+                                    <input ng-model="mBox.name" type="text" class="form-control" placeholder="metabox Name" value="{{mBox.name}}" />
+                                </div>
+                                <!-- Name END -->
+
+                                <!-- Context START -->
+                                <div class="input-group" ng-hide="editShow(selMI,'cPage,sidebars,widgets,taxonomies,tinyMCE,restRoutes,customizer,dWidgets')">
+                                    <span class="input-group-addon" uib-tooltip="Where the metabox should be positioned on the page. Normal (under content tinyMCE) or side panel (the right).">Context</span>
+                                    <select class="form-control" name="context" ng-model="mBox.context">
+                                        <option ng-repeat="context in mBContext" value="{{context.value}}">{{context.label}}</option>
+                                    </select>
+                                </div>
+                                <!-- Context END -->
+
+                                <!-- Priority START -->
+                                <div class="input-group" ng-hide="editShow(selMI,'cPage,sidebars,widgets,taxonomies,tinyMCE,restRoutes,customizer,dWidgets')">
+                                    <span class="input-group-addon" uib-tooltip="The importance (position wise) of the meta-box.">Priority</span>
+                                    <select class="form-control" name="priority" ng-model="mBox.priority">
+                                        <option ng-repeat="priority in mBPriority" value="{{priority.value}}">{{priority.label}}</option>
+                                    </select>
+                                </div>
+                                <!-- Priority END -->
+                                <!-- extra fields -->
+                                <div ng-include="abExtraEditFields">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- MetaBox Settings container END -->
+                        <div class="fieldsContainer" ng-show="!mBoxSett" ng-include="'templates/fieldsContainer-0.3.html'">
+                        </div>
+                        <!-- Fields End -->
+                        <div class="text-center addField" ng-show="(!mBoxSett && mboxFields)">
+                            <h4>Add Field:</h4>
+                            <select name="addField" class="form-control" ng-model="fieldModel" ng-change="addField(mBox.fields,fieldModel)">
+                                <option ng-repeat="fO in fieldOptions" value="{{fO.type}}">{{fO.label}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center addMBButton">
+            <button ng-click="addMetabox(aBMain.menus[selMI])" class="btn btn-primary" type="button" name="button"> Add {{metaboxText}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<!-- Description START -->
+<div class="input-group" ng-show="editShow(selMI,'sidebars')">
+    <span class="input-group-addon" uib-tooltip="The Description">Description</span>
+    <textarea ng-model="mBox.description" name="name" class="form-control" rows="3"></textarea>
+</div>
+<!-- Description END -->
+
+<!-- before_widget_id START -->
+<div class="input-group" ng-show="editShow(selMI,'sidebars')">
+    <span class="input-group-addon" uib-tooltip="The before_widget ID">before_widget id</span>
+    <input type="text" ng-model="mBox.before_widget_id" name="name" class="form-control" rows="3"></textarea>
+</div>
+<!-- before_widget_id END -->
+
+<!-- before_widget_class START -->
+<div class="input-group" ng-show="editShow(selMI,'sidebars')">
+    <span class="input-group-addon" uib-tooltip="The before_widget html">before_widget Class</span>
+    <input type="text" ng-model="mBox.before_widget_class" name="name" class="form-control" rows="3"></textarea>
+</div>
+<!-- before_widget_class END -->
+
+<!-- before_title START -->
+<div class="input-group" ng-show="editShow(selMI,'sidebars')">
+    <span class="input-group-addon" uib-tooltip="The before_title html">before_title</span>
+    <input type="text" ng-model="mBox.before_title_class" name="name" class="form-control" rows="3"></textarea>
+</div>
+<!-- before_title END -->
+<div class="hiddenCode">
+    <a ng-click="codeCollapsed = !codeCollapsed" href="javascript:void(0)">Extract Value - Source Code <i class="glyphicon glyphicon-chevron-down"></i></a>
+    <div class="fieldsContainer" uib-collapse="codeCollapsed">
+        <textarea name="codeCollapseName" rows="1" class="abCode">dynamic_sidebar( '{{mBox.name}}' );</textarea>
+    </div>
+</div>

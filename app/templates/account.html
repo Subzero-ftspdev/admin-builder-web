@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h2>My account</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6" ng-init="firstInitEditProject()">
+        <div class="accountContainer">
+
+            <p>
+                Edit and update all available details about your account information.
+            </p>
+            <form name="newProjectForm" class="" action="index.html" method="post">
+                <h3>Personal Info</h3>
+                <p>
+                    <label for="familyName">Email: </label> {{uEmail}}
+                </p>
+                <div class="form-group">
+                    <label for="familyName">Family Name</label>
+                    <input type="text" ng-model="familyName" class="form-control" id="familyName" placeholder="Family Name" />
+                </div>
+                <div class="form-group">
+                    <label for="givenName">Given Name</label>
+                    <input type="text" ng-model="givenName" class="form-control" id="givenName" placeholder="Given Name (surname)" />
+                </div>
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="text" ng-model="website" class="form-control" id="website" placeholder="Personal or company Website URL" />
+                </div>
+                <div class="form-group">
+                    <label for="userBio">Short Bio</label>
+                    <textarea ng-model="shortBio" placeholder="Short description of yourself or your company" class="form-control" id="userBio" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary btn-lg" type="button" ng-click="updateAccount()" name="button">Update Info</button>
+                </p>
+            </form>
+
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="accountContainer">
+            <h3>Other Settings</h3>
+            <p>
+                Get and update other account settings.
+            </p>
+            <h4>Reset Password:</h4>
+            <button class="btn btn-info" type="button" name="button" ng-click="accResPass();">Reset Password</button>
+            <h4>Contact Us</h4>
+            <p>
+              Go to contact page and send us a message:
+            </p>
+            <button type="button" name="button" class="btn btn-warning" ng-click="contactCall();">Contact Message</button>
+          </p>
+
+        </div>
+    </div>
+
+</div>

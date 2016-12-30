@@ -1,0 +1,20 @@
+<!-- taxonomy applies to START -->
+<div class="input-group">
+    <span class="input-group-addon" uib-tooltip="The before_widget ID">Apply to:</span>
+    <select class="form-control" name="applyTo" ng-model="mBox.applyTo">
+      <option value="post">Posts</option>
+      <option value="page">Pages</option>
+      <option value="attachment">Attachment</option>
+      <option value="revision">Revision</option>
+      <option value="nav_menu_item">Navigation Menu Item</option>
+      <option value="custom_post_type">Custom Post Type</option>
+    </select>
+</div>
+<!-- taxonomy applies to END -->
+{{applyTo}}
+<!-- cptName START -->
+<div class="input-group" ng-show="mBox.applyTo==='custom_post_type'">
+    <span class="input-group-addon" uib-tooltip="The before_widget ID">Custom Post Type Name:</span>
+    <input class="form-control" type="text" name="cptName" ng-model="mBox.cptName" value="" />
+</div>
+<!-- before_widget_id END -->

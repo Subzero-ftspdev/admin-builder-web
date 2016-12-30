@@ -1,0 +1,14 @@
+@mixin ab-border-radius($radius,$tlPx:$radius, $blPx:$radius,$trPx:$radius,$brPx:$radius){
+  -webkit-border-top-left-radius: $tlPx;
+  -webkit-border-top-right-radius: $trPx;
+  -webkit-border-bottom-right-radius: $brPx;
+  -webkit-border-bottom-left-radius: $blPx;
+  -moz-border-radius-topleft: $tlPx;
+  -moz-border-radius-topright: $trPx;
+  -moz-border-radius-bottomright: $brPx;
+  -moz-border-radius-bottomleft: $blPx;
+  border-top-left-radius: $tlPx;
+  border-top-right-radius: $trPx;
+  border-bottom-right-radius: $brPx;
+  border-bottom-left-radius: $blPx;
+}

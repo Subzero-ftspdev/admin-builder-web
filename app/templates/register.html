@@ -1,0 +1,46 @@
+<div class="col-md-12 text-center">
+    <h1>Register to Admin Builder</h1>
+    <div class="mainBox">
+        <form name="registerForm" novalidate>
+            <p>
+                <label for="basic-url">Email</label>
+                <input type="text" name="lEmail" ng-enter="abRegister()" ng-change="changeValidity(registerForm.lEmail)" ng-model="lEmail" ng-pattern="regexMail" class="form-control" id="basic-url" aria-describedby="basic-addon3" autocomplete="off" placeholder="Your email address">
+            </p>
+            <p>
+                <label for="basic-url">Password</label>
+                <input type="password" name="lPassword" ng-enter="abRegister()" ng-model="lPassword" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-change="validatePass()" placeholder="Strong Password" autocomplete="off"/>
+            </p>
+            <p>
+            <label for="basic-url">Password (again)</label>
+            <input type="password" name="lPassword2" ng-enter="abRegister()" ng-model="lPassword2" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-change="validatePass()" placeholder="Repeat Password" autocomplete="off"/>
+            </p>
+            <div class="strongPassword" ng-show="strongPassword!=''">
+                <h4>Strong Password:</h4>
+                <p class="spView ng-isolate-scope alert-success">
+                    {{strongPassword}}
+                </p>
+            </div>
+            <p>
+              Password is reccomended be 8 characters long containing at least 1 number 1 lowercase letter , 1 uppercase letter and one special character (any of: !@#\$%\^&\*)
+            </p>
+            <p>
+                <button type="button" ng-click="generatePassword()" class="btn btn-info" name="button">Generate STRONG password</button>
+            </p>
+            <p>
+              By clicking register you confirm that you agree to our <a href="#/terms-and-conditions">terms and conditions</a>
+            </p>
+            <p>
+                <button type="button" class="btn btn-primary" name="button" ng-click="abRegister()">Register</button>
+            </p>
+
+            <p>
+                <a href="#/login">Go back to Login</a>
+            </p>
+        </form>
+
+
+    </div>
+    <p>
+        {{testResponse}}
+    </p>
+  </div>
